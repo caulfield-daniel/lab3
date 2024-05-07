@@ -1,21 +1,20 @@
-#pragma once
-#include <string>
-#include <math.h>
+#include <iostream>
+#include "RightTriangle.h"
 
-class RightTriangle {
-private:
-	double a;
-	double b;
+int main() {
 
-public:
-	RightTriangle(double default_a, double default_b) : a(default_a), b(default_b) {}
+	int a, b;
 
-	std::string getInfo() {
-		return "First catheter: " + std::to_string(a) + "\nSecond catheter: " + std::to_string(b);
-	}
+	std::cout << "Catheter a: ";
+	std::cin >> a;
 
-	double getHypotenuse() {
-		return sqrt(a * a + b * b);
-	}
-	
-};
+	std::cout << "Catheter b: ";
+	std::cin >> b;
+
+	RightTriangle rtriangle(a, b);
+
+	std::cout << rtriangle.getInfo() << std::endl;
+	std::cout << "Hypotenuse: " << rtriangle.getHypotenuse() << std::endl;
+
+	return 0;
+}
